@@ -1,0 +1,120 @@
+﻿
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image:url("natural.jpg");
+    background-size:cover;
+  
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+   
+}
+.form-design {
+    border: solid;
+    border-radius: 5%;
+    padding-top:2rem;
+  
+}
+
+textarea{
+    height: 1000px;
+}
+
+
+h3 {
+   
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    color: black;
+    font-weight: bolder;
+    
+}
+
+.iconWidth{
+    width:10px;
+}
+p{
+    color:saddlebrown;
+}
+
+table {
+    background-color: ghostwhite;
+    border: solid;
+  
+}
+
+th {
+    background-color: #145e51;
+    color: whitesmoke;
+
+}
+
+.iconAlign{
+ width:10%;
+}
+.indexTable{
+    margin-top:5rem;
+}
+#BookDetails {
+    background-color: olivedrab;
+    width: 30%;
+}
+
+#BookDetailsTable {
+    width: 40%;
+    border: solid;
+    border-radius:5%;
+    margin: auto;
+    padding-top:10rem;
+}
+a {
+    color: black;
+    font-weight: bolder;
+   
+}
+ a:hover {
+        text-decoration: underline;
+        color:forestgreen;
+ }
+
+
+.details{
+    border:solid;
+    border-radius:10px;
+    line-height:10rem;
+    text-align:left;
+}
+dl,dd,dt {
+    line-height:2rem;
+    text-align:left;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

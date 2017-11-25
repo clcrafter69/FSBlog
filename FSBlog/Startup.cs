@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using FSBlog.Data;
 using FSBlog.Models;
 using FSBlog.Services;
+using BlogModel;
 
 namespace FSBlog
 {
@@ -33,10 +34,18 @@ namespace FSBlog
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+                googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+            });
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+            services.AddScoped<IBlogRepository, PostRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +70,7 @@ namespace FSBlog
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Post}/{action=Index}/{id?}");
             });
         }
     }
