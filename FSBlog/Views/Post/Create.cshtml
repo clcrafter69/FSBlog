@@ -28,14 +28,10 @@
                 <textarea asp-for="Content" row="20" cols="10" class="form-control" ></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CreateDate" class="control-label"></label>
-                <input type="date" asp-for="CreateDate" class="form-control" />
-                <span asp-validation-for="CreateDate" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="CreateDate" />
             <div class="form-group">
                 <label asp-for="PubDate" class="control-label"></label>
-                <input type="date" PubDate"  class="form-control" required />
+                <input type="date" asp-for="PubDate"  class="form-control" required />
                 <span asp-validation-for="PubDate" class="text-danger"></span>
             </div>
             <div class="form-group">

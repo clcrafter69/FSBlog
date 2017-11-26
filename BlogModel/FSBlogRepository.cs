@@ -59,11 +59,12 @@ namespace BlogModel
                         // LoadFromFile();
                         var serializedPosts = File.ReadAllText(Path.Combine(path, fileName));
                         _posts = JsonConvert.DeserializeObject<List<Post>>(serializedPosts);
+                        _posts = _posts.OrderByDescending(x => x.Id).ToList();
 
                         var orderedPosts = from post in _posts
                                            orderby post.Id descending
                                            select post.Id;
-                     
+                       
 
                     }
                 }
@@ -95,6 +96,7 @@ namespace BlogModel
         public void Add(Post newPost)
         {
             newPost.Id = getNextID();
+            newPost.CreateDate = DateTime.Now;
             _posts.Add(newPost);
             SaveToFile();
 
@@ -116,6 +118,7 @@ namespace BlogModel
             _posts.Remove(GetById(editPost.Id));
 
             _posts.Add(editPost);
+            _posts = _posts.OrderByDescending(x => x.Id).ToList();
             SaveToFile();
             //throw new NotImplementedException();
         }
@@ -128,6 +131,7 @@ namespace BlogModel
 
         public List<Post> ListAll()
         {
+            _posts = _posts.OrderByDescending(x => x.PubDate).ToList();
             return _posts;
             //throw new NotImplementedException();
         }
