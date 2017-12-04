@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FSBlog</title>
+    <title>@ViewData["Title"] - Cynthia L Crafter</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -17,6 +17,11 @@
     </environment>
 </head>
 <body>
+    <div class="container">
+        <header >
+           <img src="~/css/ladydesktop2.jpg" width="1000"height="250" class="img-responsive center-block"/>
+        </header>
+    </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,14 +31,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">FSBlog</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cynthia L Crafter</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Post" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="Post" asp-action="Index">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="Admin">
+                            <li><a asp-area="" asp-controller="Post" asp-action="Create">Add Blog Post</a></li>
+                            <li><a asp-area="" asp-controller="Post" asp-action="EditIndex">Modify Blog Post</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
@@ -43,7 +54,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - FSBlog</p>
+            <p>&copy; 2017 - Cynthia L Crafter</p>
         </footer>
     </div>
 

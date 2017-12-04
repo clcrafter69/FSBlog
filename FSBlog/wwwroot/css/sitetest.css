@@ -6,6 +6,12 @@ body {
     background-size:cover;
   
 }
+.head-design {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url("ladydesktop2.jpg");
+    background-size: cover;
+}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -25,13 +31,22 @@ textarea{
     height: 1000px;
 }
 
+h4{
+    display:inline;
+}
+
 
 h3 {
-    text-align: center;
+    text-align: left;
     margin: auto;
     margin-top: 10px;
     color: whitesmoke;
     font-weight: bolder;
+
+}
+
+.indexList {
+    color:white;
 }
 
 .iconWidth{
@@ -41,8 +56,12 @@ h3 {
 .aside{
     float: right;
 }
-p{
-    color:black;
+p {
+    color: black;
+    margin: 10px;
+    padding-top:15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 table {
@@ -52,6 +71,10 @@ table {
 }
 .SPost {
     background-color: ghostwhite;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border:groove solid;
+   
 }
 
 th {
@@ -80,9 +103,14 @@ th {
 }
 a {
     color:peru;
-  
    
 }
+
+h2{
+    color:darkgreen;
+    font-weight:bolder;
+}
+
  a:hover {
         text-decoration: underline;
         color:forestgreen;

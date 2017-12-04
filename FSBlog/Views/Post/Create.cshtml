@@ -4,12 +4,12 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Add New Post</h2>
 
-<h4>Post</h4>
+
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-offset-4 form-design">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -42,7 +42,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="indexList" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

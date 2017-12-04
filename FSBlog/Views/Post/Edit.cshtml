@@ -4,19 +4,14 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Post</h2>
 
-<h4>Post</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-offset-4 form-design">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
@@ -26,21 +21,21 @@
                 <label asp-for="PermaLink" class="control-label"></label>
                 <input asp-for="PermaLink" class="form-control" />
                 <span asp-validation-for="PermaLink" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
+            </div>           
             <div class="form-group">
                 <label asp-for="CreateDate" class="control-label" ></label>
-                <input asp-for="CreateDate" class="form-control" readonly/>
+                <input type="date" asp-for="CreateDate" class="form-control" readonly/>
                 <span asp-validation-for="CreateDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PubDate" class="control-label"></label>
-                <input asp-for="PubDate" class="form-control" />
+                <input type="date" asp-for="PubDate" class="form-control" />
                 <span asp-validation-for="PubDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <textarea asp-for="Content" row="20" cols="10" class="form-control"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -50,7 +45,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="indexList" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

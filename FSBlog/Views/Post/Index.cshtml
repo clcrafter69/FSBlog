@@ -4,12 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
 <div class="row">
     <div class="col-md-8  SPost">
     @{ var count = 0; }
@@ -17,12 +11,12 @@
     {
 
             <article>
-                <h5>  @Html.DisplayFor(model => item.PubDate)</h5>
+                <h4>  @Html.DisplayFor(model => item.PubDate)</h4>
                 @{string title = item.Title;
                 }
-                <h3> @Html.ActionLink(item.Title, "Edit", new { id = item.Id })</h3><br />
+                <h3> @Html.ActionLink(item.Title, "Index", new { id = item.Id })</h3><br />
                 <p>
-                    @Html.DisplayFor(modelItem => item.Content)
+                    @Html.Raw(item.Content);
                 </p>
 
             </article>
@@ -31,6 +25,8 @@
    
     </div>
     <div class="col-md-3 aside  SPost">
+
+        <h2>Recent Posts</h2>
         @{ var recentCount = 0; }
         @foreach (var item in Model)
         {
@@ -39,7 +35,7 @@
                 <h5>  @Html.DisplayFor(model => item.PubDate)</h5>
                 @{string title = item.Title;
                 }
-                <h4> @Html.ActionLink(item.Title, "Edit", new { id = item.Id })</h4><br />
+                <h4> @Html.ActionLink(item.Title, "Details", new { id = item.Id })</h4><br />
 
             </article>
                      

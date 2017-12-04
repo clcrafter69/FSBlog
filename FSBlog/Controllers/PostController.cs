@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace FSBlog.Controllers
 {
-    [Authorize]
+    
     public class PostController : Controller
     {
        
@@ -26,6 +26,12 @@ namespace FSBlog.Controllers
             return View(_postRepo.ListAll());
         }
 
+        // GET: Post
+        public ActionResult EditIndex()
+        {
+            return View(_postRepo.ListAll());
+        }
+
         // GET: Post/Details/5
         public ActionResult Details(int id)
         {
@@ -33,6 +39,7 @@ namespace FSBlog.Controllers
         }
 
         // GET: Post/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -41,6 +48,7 @@ namespace FSBlog.Controllers
         // POST: Post/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Post newPost, IFormCollection collection)
         {
             try
@@ -60,6 +68,7 @@ namespace FSBlog.Controllers
         }
 
         // GET: Post/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             return View(_postRepo.GetById(id));
@@ -68,6 +77,7 @@ namespace FSBlog.Controllers
         // POST: Post/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(Post editedPost)
         {
             try
@@ -87,6 +97,7 @@ namespace FSBlog.Controllers
         }
 
         // GET: Post/Delete/5
+        [Authorize]
         public ActionResult Delete(int id)
         {
             return View(_postRepo.GetById(id));
@@ -95,6 +106,7 @@ namespace FSBlog.Controllers
         // POST: Post/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try

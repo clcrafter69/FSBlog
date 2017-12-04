@@ -1,0 +1,30 @@
+﻿@model BlogModel.Post
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+
+<div class="row">
+    <div class="col-md-8  SPost">
+  
+
+            <article>
+                <h4>  @Html.DisplayFor(model => model.PubDate)</h4>
+                @{string title = Model.Title;
+                }
+                <h3> @Html.ActionLink(Model.Title, "Edit", new { id = Model.Id })</h3><br />
+                <p>
+                    @Html.Raw(Model.Content);
+                </p>
+
+            </article>
+    </div>
+ 
+    </div>
+<div class="indexList">
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Id }) |
+    <a class="indexList" asp-action="Index">Back to List</a>
+</div>
