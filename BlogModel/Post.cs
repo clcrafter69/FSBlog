@@ -26,6 +26,10 @@ namespace BlogModel
         public DateTime PubDate { get; set; }
 
         public Author Author { get; set; }
+
+        //navigation properties
+        public int BlogId { get; set; }
+        public Blog Blog { get; set; }
     }
 
 }
