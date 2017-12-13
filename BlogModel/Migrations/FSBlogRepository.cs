@@ -135,5 +135,10 @@ namespace BlogModel
             return _posts;
             //throw new NotImplementedException();
         }
+
+        public List<Author> GetName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

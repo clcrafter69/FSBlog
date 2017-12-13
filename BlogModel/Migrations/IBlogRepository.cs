@@ -13,5 +13,6 @@ namespace BlogModel
         Post GetById(int id);
         List<Post> ListAll();
         void Edit(Post editPost);
+        List<Author> GetName();
     }
 }

@@ -42,6 +42,9 @@ namespace FSBlog.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            //add author code--ClC 12-12
+          //  var authorPos = _postRepo.
+
             return View();
         }
 

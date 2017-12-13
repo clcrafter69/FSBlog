@@ -47,7 +47,7 @@ namespace FSBlog
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
-            services.AddScoped<IBlogRepository, PostRepository>();
+            services.AddScoped<IBlogRepository, PostRepositoryEF>();
 
         }
 
